@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import "./App.css";
-
+import dashboardImage from "./assets/autheo-stake-dashboard-design.png";
 const TOKEN_ADDRESS = "0x483AF137568B773Ffaf2a7FC930a09bfE5a7A474";
 const STAKING_ADDRESS = "0x3D859448BFCBCA30e3627cdE5FA03507c305Ecbd";
 const CHAIN_ID = 785;
@@ -188,29 +188,33 @@ function App() {
       loadBalances(wallet);
     }
   }, [wallet]);
-
-  return (
+return (
+  <div
+    style={{
+      minHeight: "100vh",
+      backgroundImage: `url(${dashboardImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      color: "white",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "20px",
+      fontFamily: "Arial",
+    }}
+  >
     <div
       style={{
-        minHeight: "100vh",
-        background: "#020617",
-        color: "white",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "20px",
-        fontFamily: "Arial",
+        width: "420px",
+        background: "rgba(15, 23, 42, 0.82)",
+        backdropFilter: "blur(12px)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: "20px",
+        padding: "30px",
+        boxShadow: "0 0 30px rgba(0,0,0,0.4)",
       }}
     >
-      <div
-        style={{
-          width: "420px",
-          background: "#111827",
-          borderRadius: "20px",
-          padding: "30px",
-          boxShadow: "0 0 30px rgba(0,0,0,0.4)",
-        }}
-      >
         <h1 style={{ textAlign: "center", marginBottom: "10px" }}>
           Autheo Staking
         </h1>
